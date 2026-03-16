@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>职业测试报告</title>
+    <title>职业测试丨娱乐向</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
             <style>
@@ -264,7 +264,7 @@
         </div>
 
         <div class="section-block" style="text-align: center; padding: 20px 0;">
-            <h3 style="font-size: 0.8rem; color: #888; margin-bottom: 20px; letter-spacing: 2px;">潜在职业图谱 / CAREER CLOUD</h3>
+            <h3 style="font-size: 0.8rem; color: #888; margin-bottom: 20px; letter-spacing: 2px;">潜在职业图谱 / WORD CLOUD</h3>
             <div id="word-cloud" style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 15px;"></div>
         </div>
 
@@ -291,25 +291,25 @@
     <script>
         const careerList = [
             { name: "策展人", def: "负责展览、收藏品或文化项目的规划、组织与管理。核心工作包括确定主题、筛选作品、设计空间布局、撰写展览导语以及协调各方资源完成项目交付。", books: "《策展简史》；《策展人手册》", tools: "SketchUp（空间建模）；InDesign（排版设计）" },
-            { name: "OSINT开源情报调查员", def: "利用公开渠道（社交媒体、政府记录、卫星影像、网络漏洞等）收集、分析并整合情报信息。主要用于背景调查、事实核查、资产追踪或安全评估。", books: "Open Source Intelligence Techniques；《情报分析心理学》", tools: "Maltego（关系网挖掘与可视化）；Google Dorking" },
+            { name: "OSINT开源情报调查员", def: "利用公开渠道（社交媒体、政府记录、卫星影像等）收集、分析并整合情报信息。主要用于背景调查、事实核查、资产追踪或安全评估。", books: "Open Source Intelligence Techniques；《情报分析心理学》", tools: "Maltego（关系网挖掘与可视化）；Google Dorking" },
             { name: "塔罗师", def: "利用塔罗牌作为视觉与符号工具，结合符号学、心理学与叙事逻辑，为客户提供现状分析、决策参考与心理疏导的服务。", books: "《塔罗入门》；《78度的智慧》", tools: "伟特系/透特系标准塔罗牌；Notion（用于建立客户档案与案例复盘库）" },
             { name: "App 开发者", def: "独立负责软件产品的全生命周期开发，包括需求调研、前端/后端代码编写、UI/UX 设计、上架审核及后期运营维护。", books: "《软技能：代码之外的生存指南》；《黑客与画家》", tools: "VS Code/Xcode；Git" },
             { name: "自动化工作流架构师", def: "利用低代码或无代码工具，通过 API 接口将不同的软件系统连接，搭建自动化的数据流转与任务执行系统，以减少人工重复操作。", books: "《增长黑客》；《这就是ChatGPT》", tools: "Make（原Integromat）/Zapier；Dify/Coze" },
             { name: "中古家具买手", def: "在全球范围内搜寻、鉴定并采购具有历史价值或设计美学的二手家具。涉及真伪鉴别、成色评估、跨国物流协调以及翻新销售。", books: "1000 Chairs；《家具设计》", tools: "Google Lens；海运/清关服务商名录" },
-            { name: "书店老板", def: "负责书店的选品策略、进销存管理、空间运营及社区推广。核心价值在于通过特定的选书逻辑建立品牌辨识度并实现盈利。", books: "《书店日记》；《书店风景》", tools: "ERP 进销存系统；小红书/微信公众号（私域运营）" },
+            { name: "书店老板", def: "负责书店的选品策略、进销存管理、空间运营及社区推广。核心价值在于通过特定的选书逻辑建立品牌辨识度并实现盈利。", books: "《品牌通识》；《书店风景》", tools: "ERP 进销存系统；小红书/微信公众号（私域运营）" },
             { name: "收纳师", def: "为个人或家庭提供空间诊断、物品整理与动线规划服务。旨在通过科学的收纳系统逻辑，提高空间利用率并改善居住者生活习惯。", books: "《怦然心动的人生整理魔法》；《住宅设计解剖书》", tools: "红外测距仪；测绘纸/平面图绘制软件" },
             { name: "独立摄影师", def: "不隶属于影楼，独立承接人像、商业、建筑或纪实摄影项目。涵盖拍摄策划、光影控制、后期调色及交付。", books: "《摄影师的视界》；《论摄影》", tools: "Adobe Lightroom/Photoshop；Capture One" },
             { name: "自由撰稿人", def: "独立为媒体、企业或个人平台提供文字内容。工作包括选题策划、深度采访、资料查证及多风格稿件写作。", books: "《文案训练手册》；《非虚构写作指南》", tools: "Markdown 编辑器 (如Obsidian或Typora)" },
-            { name: "纪录片导演", def: "独立策划并制作以真实生活为素材的影像作品。核心工作包括选题调研、现场访谈、素材拍摄以及后期非线性编辑。", books: "《纪录片导论》；《制作纪录片》", tools: "Premiere Pro/Final Cut Pro；DaVinci Resolve" },
-            { name: "手工皮具匠人", def: "使用皮革材料进行手工制品的设计与制作。涉及版型打样、下料、斩孔、手工缝制、封边及五金组装。", books: "《皮革工艺》；《手缝皮艺基础》", tools: "裁皮刀/菱斩；CAD/AI（用于绘图制版）" },
-            { name: "微景观造景师", def: "在玻璃容器等封闭或半封闭空间内，利用植物、苔藓及造景石，模拟微缩自然生态系统的设计与搭建。", books: "《玩苔藓》；《水族造景与水草鉴赏》", tools: "精密镊子；长柄剪刀；喷雾系统；补光设备" },
-            { name: "宠物殡葬师", def: "为离世宠物提供善后服务，包括遗体接送、清理美容、告别仪式主持、火化操作及骨灰安置。", books: "《你在心里，从未离去》；《宠物殡葬服务标准手册》", tools: "小型火化炉设备；遗体清洗与防腐材料" },
-            { name: "独立游戏制作人", def: "独立或以极小团队规模进行游戏开发。涵盖游戏机制设计、数值平衡、美术资源实现、程序编写及发行运营。", books: "《游戏设计艺术》；《体验引擎》", tools: "Unity/Unreal Engine/Godot（游戏引擎）；Blender（3D建模）" },
+            { name: "纪录片导演", def: "独立策划并制作以真实生活为素材的影像作品。核心工作包括选题调研、现场访谈、素材拍摄以及后期非线性编辑，旨在记录事实或传达特定社会视角。", books: "《纪录片导论》；《制作纪录片》", tools: "Premiere Pro/Final Cut Pro；DaVinci Resolve" },
+            { name: "手工皮具匠人", def: "使用皮革材料进行手工制品的设计与制作。涉及版型打样、下料、斩孔、手工缝制（如双针平缝）、封边及五金组装，强调材料特性与结构的结合。", books: "《皮革工艺》；《手缝皮艺基础》", tools: "裁皮刀/菱斩；CAD/AI（用于绘图制版）" },
+            { name: "微景观造景师", def: "在玻璃容器等封闭或半封闭空间内，利用植物、苔藓、基质及造景石，模拟微缩自然生态系统的设计与搭建。需掌握植物生态学与景观构图。", books: "《玩苔藓》；《水族造景与水草鉴赏》", tools: "精密镊子；长柄剪刀；喷雾系统；补光设备" },
+            { name: "宠物殡葬师", def: "为离世宠物提供善后服务，包括遗体接送、清理美容、告别仪式主持、火化操作及骨灰安置。核心在于流程的规范化与对宠物主人的情绪支持。", books: "《你在心里，从未离去》；《宠物殡葬服务标准手册》", tools: "小型火化炉设备；遗体清洗与防腐材料" },
+            { name: "独立游戏制作人", def: "独立或以极小团队规模进行游戏开发。涵盖游戏机制设计（GDD）、数值平衡、美术资源实现、程序编写及在 Steam/Itch.io 等平台的发行运营。", books: "《游戏设计艺术》；《体验引擎》", tools: "Unity/Unreal Engine/Godot（游戏引擎）；Blender（3D建模）" },
             { name: "调酒师", def: "在私人宴会、工作室或小型预约制空间提供定制化饮品服务。包括酒单设计、风味调配、基酒管理以及酒具文化讲解。", books: "《鸡尾酒法典》；《世界酒文化》", tools: "波士顿摇酒壶/搅拌杯；精密电子称；刻度量杯" },
             { name: "二奢鉴定师", def: "通过对奢侈品材质、工艺、五金、Logo 刻印及防伪细节进行多维检测，判定其真伪、新旧成色及估值。", books: "《奢侈品战略》；《名表鉴定》", tools: "高倍率珠宝放大镜；强光手电；紫外灯" },
-            { name: "旅游定制师", def: "针对客户的个性化需求，设计深度游或小众旅行线路。包括资源采买、风险管控、行程逻辑优化及支持。", books: "Lonely Planet；《地理学与生活》", tools: "FlightAware/ExpertFlyer（航班追踪）；飞书/Notion（用于交付行程单）" },
-            { name: "插画师 / 原画师", def: "为出版物、广告、游戏或影视作品创作视觉形象或场景。将抽象概念转化为具象的视觉资产。", books: "《艺用人体结构》；《色彩与光线》", tools: "Wacom 数位板/iPad；Procreate软件" },
-            { name: "二手车评估师", def: "作为第三方，对二手车辆进行事故排查、水泡火烧检测、机械状况评估及漆面分析。", books: "《汽车构造》；《二手车鉴定评估与交易》", tools: "漆面厚度测试仪；OBD 诊断电脑" }
+            { name: "旅游定制师", def: "针对客户的个性化需求，设计深度游或小众旅行线路。包括资源采买（航司/酒店/本地向导）、风险管控、行程逻辑优化及全程实时咨询支持。", books: "Lonely Planet；《地理学与生活》", tools: "FlightAware/ExpertFlyer（航班追踪）；飞书/Notion（用于交付行程单）" },
+            { name: "插画师 / 原画师", def: "为出版物、广告、游戏或影视作品创作视觉形象或场景。核心工作是将抽象文本或概念通过构图、色彩、光影转化为具象的视觉资产。。", books: "《艺用人体结构》；《色彩与光线》", tools: "Wacom 数位板/iPad；Procreate软件" },
+            { name: "二手车评估师", def: "作为第三方，对二手车辆进行事故排查、水泡火烧检测、机械状况评估及漆面分析。出具权威检测报告，协助买方规避交易风险。", books: "《汽车构造》；《二手车鉴定评估与交易》", tools: "漆面厚度测试仪；OBD 诊断电脑" }
         ];
 
         const sideJobs = {
@@ -527,7 +527,7 @@ resultHTML += `
 // 构建 Section 2 (词云：强制居中布局)
 resultHTML += `
     <div class="section-block" style="margin-top: 50px;">
-        <h3 class="audit-section-title">潜在职业图谱 / CAREER CLOUD</h3>
+        <h3 class="audit-section-title">潜在职业图谱 / WORD CLOUD</h3>
         <div class="word-cloud-container">
             <div class="core-job">${careerData.name}</div>
 `;
